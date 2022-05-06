@@ -1,10 +1,10 @@
-#This program simulates the evolution of antibiotic resistance in a bacterial population
-#Efflux pumps are an important mechanism of antiobiotic resistance that allows bacteria to expel antibiotics
-#However, efflux pumps can also be targeted by phages
-#I was interested in exploring this evolutionary tradeoff and simulating how bacterial population would react to exposure to phages and antibiotics
-#Bacteria show variation in their efflux pump expression (represented nummerically as a numerical "mean antibiotic resistance value") and will occasionally mutate
-#The user can set an initial number of bacteria (blue dots), phages (green dots), and antiobiotic molecules (red dots) to interact in a physical space
-#The extent to which the bacterial population adapts to the presence of phages and antibiotics is measured by tracking the mean antibiotic resistance value over time
+#This program simulates the evolution of antibiotic resistance in a bacterial population.
+#Efflux pumps are an important mechanism of antiobiotic resistance that allows bacteria to expel antibiotics, providing an evolutionary incentive for their expression when antibiotics are present.
+#However, efflux pumps can also be targeted by phages, causing efflux pump expression to be disincentivised when phages are present.
+#I was interested in exploring this evolutionary tradeoff and simulating how bacterial population would react to exposure to phages and antibiotics.
+#Bacteria show variation in their efflux pump expression (represented nummerically as a numerical "mean antibiotic resistance value") and will occasionally mutate.
+#The user can set an initial number of bacteria (blue dots), phages (green dots), and antiobiotic molecules (red dots) to interact in a physical space.
+#The extent to which the bacterial population adapts to the presence of phages and antibiotics is measured by tracking the mean antibiotic resistance value over time.
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import numpy as np
@@ -14,7 +14,7 @@ Efflux pumps are an important mechanism of antiobiotic resistance that allows ba
 However, efflux pumps can also be targeted by phages, causing efflux pump expression to be disincentivised when phages are present.\n\
 I was interested in exploring this evolutionary tradeoff and simulating how bacterial population would react to exposure to phages and antibiotics.\n\
 Bacteria show variation in their efflux pump expression (represented nummerically as a numerical "mean antibiotic resistance value") and will occasionally mutate.\n\
-The user can set an initial number of bacteria (blue dots), phages (green dots), and antiobiotic molecules (red dots) to interact in a physical space\n\
+The user can set an initial number of bacteria (blue dots), phages (green dots), and antiobiotic molecules (red dots) to interact in a physical space.\n\
 The extent to which the bacterial population adapts to the presence of phages and antibiotics is measured by tracking the mean antibiotic resistance value over time.')
 
 BOUNDS = (40,40)
