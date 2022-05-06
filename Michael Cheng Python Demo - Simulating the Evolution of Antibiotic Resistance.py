@@ -9,6 +9,14 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import numpy as np
 
+print('This program simulates the evolution of antibiotic resistance in a bacterial population.\n\
+Efflux pumps are an important mechanism of antiobiotic resistance that allows bacteria to expel antibiotics, providing an evolutionary incentive for their expression when antibiotics are present.\n\
+However, efflux pumps can also be targeted by phages, causing efflux pump expression to be disincentivised when phages are present.\n\
+I was interested in exploring this evolutionary tradeoff and simulating how bacterial population would react to exposure to phages and antibiotics.\n\
+Bacteria show variation in their efflux pump expression (represented nummerically as a numerical "mean antibiotic resistance value") and will occasionally mutate.\n\
+The user can set an initial number of bacteria (blue dots), phages (green dots), and antiobiotic molecules (red dots) to interact in a physical space\n\
+The extent to which the bacterial population adapts to the presence of phages and antibiotics is measured by tracking the mean antibiotic resistance value over time.')
+
 BOUNDS = (40,40)
 all_bacteria = []
 all_antibiotics = []
@@ -25,10 +33,6 @@ DEATH_CHANCE = 0.01
 BACTERIA_DEATH_MODIFIER = 1
 PHAGE_DEATH_MODIFIER = 0.25
 RADIUS = 0.25
-#I chose some of these constants such as REPRODUCTION_CHANCE and MUTATION_CHANCE somewhat arbitrarily in order to develop the prototype more quickly.
-#Ideally these values wouold be based on literature but I had a hard time finding relevant information.
-#How would you go about choosing these values in an informed way? 
-#Would your approach be different if I was looking to simulate specific species of bacteria and phages v.s. bacteria and phages in general?
 
 
 def distance(coord_1,coord_2):
@@ -96,8 +100,6 @@ class Bacterium(Entity):
                     #the bacterium is more vulnerable to phages if its resistance is low
                     all_bacteria.remove(self)
                     break
-        #The idea behind these interactions  is that an innate characteristic of the bacterium (self.resistance) and some stochastic factor (np.random.uniform(0,2))
-        #both influence whether or not the bacterium will die. Do you think this is an appropriate way modeling this?
     def mutate(self):
         self.resistance += 0.25 * np.random.normal()
 
