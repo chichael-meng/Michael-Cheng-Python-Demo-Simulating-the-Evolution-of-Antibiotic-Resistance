@@ -121,7 +121,6 @@ def animate(frame):
     phage_y_coords = []
     antibiotic_x_coords = []
     antibiotic_y_coords = []
-    global total_resistance 
     total_resistance = 0
     artists = []
 
