@@ -60,7 +60,7 @@ Alternative methods of analyzing the generated data will also be considered. The
 
 ![alt text](https://github.com/chichael-meng/Images/blob/main/regression%20plane.png)
 
-Adapted from Figure 1 of Ho et. al's "Optimization and characterization of artesunate-loaded chitosan-decorated poly(d,L-lactide-co-glycolide) acid nanoparticles"<sup>6</sup>.
+An example 4D regression plane adpated from Figure 1 of Ho et. al's "Optimization and characterization of artesunate-loaded chitosan-decorated poly(d,L-lactide-co-glycolide) acid nanoparticles"<sup>6</sup>.
 
 ## Future Applications
 
