@@ -14,13 +14,18 @@ Bacteriophages, viruses that specifically target bacteria, exert an opposing evo
 
 ## How does this project work?
 
+### Sim_Visualization.py
 This project uses an agent-based approach to simulate how antibiotic resistance, specifically in the form of efflux pump expression, would evolve in a bacterial population in response to the presence of phages and antibiotics. Bacteria (blue dots), phages (green dots) and antibiotics (red dots) move around in a confined space like this:
 
 ![alt text](https://github.com/chichael-meng/Images/blob/main/sim%20clip.gif)
 
 If a bacterium gets close enough to a phage or antibiotic, it has a chance of dying. That chance is dependent on the bacterium’s antibiotic resistance value (ABV) which represents its level of efflux pump expression. The bacteria start with random ABVs and have a chance of mutating every time the simulation updates, leading to a small increase or decrease in their ABVs. If a bacterium’s ABV is low (low efflux pump expression), it has a higher chance of dying to an antibiotic, but a lower chance of dying to a phage. Likewise, if its ABV is high (high efflux pump expression), it has a lower chance of dying to an antibiotic, but a higher chance of dying to a phage. As such, one would expect that in an environment with more antibiotics than phages, more high-ABV bacteria would survive and reproduce, leading to a higher mean ABV across all bacteria. Similarly, when more phages are present than antibiotics, low-ABVs should be favoured and the mean ABV should decrease.
 
-This simulation can be run many times with different initial numbers of bacteria, phages, and antibiotics to assess how the bacteria respond to different conditions. These data can then be analyzed to see how the size of the bacterial population or mean ABV vary across time and with different initial doses of phages and antibiotics. For example, here are the results of a linear regression that models bacterial population size (response variable) as a function of time, initial phage count, and initial antibiotic count (predictor variables).
+### Data_Creation.py
+This simulation can be run many times with different initial numbers of bacteria, phages, and antibiotics to assess how the bacteria respond to different conditions. Data from a small number of simulations was saved to "Small_Treatment_Data".
+  
+### Linear_Regression_Model.rmd
+These data can then be analyzed to see how the size of the bacterial population or mean ABV vary across time and with different initial doses of phages and antibiotics. For example, here are the results of a linear regression that models bacterial population size (response variable) as a function of time, initial phage count, and initial antibiotic count (predictor variables).
 
 ```
                         Estimate Std. Error t value Pr(>|t|)    
@@ -32,6 +37,7 @@ initial_num_antibiotic -0.007725   0.018685  -0.413    0.679
 
 Looking at the p values in the Pr(>|t|) column, the size of bacterial populations seems to significantly decrease over time, whereas the initial phage and antibiotic counts do not have statistically significant effects. 
 
+### Regression_Plot.py 
 The linear regression models can also be visualized with the three predictor variables on spatial axes, and the response variable represented by a colour scale. Here is an example of a model with mean ABV modeled as a function of time, initial phage count, and initial antibiotic count. The brighter of the dot, the higher the ABV for that observation.
 
 ![alt text](https://github.com/chichael-meng/Images/blob/main/4D%20Regression.png)
