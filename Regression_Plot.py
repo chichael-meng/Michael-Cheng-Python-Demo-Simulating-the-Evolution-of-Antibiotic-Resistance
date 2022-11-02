@@ -16,16 +16,7 @@ def plot():
 
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
-
-    user = ''
-    img = ''
-    while user != '1' and user != '2':
-        user = input('Input 1 to plot the mean resistance and input 2 to plot the number of bacteria ')
-    if user == 1:
-        img = ax.scatter(time, initial_num_phage, initial_num_antibiotic, c=mean_resistance, cmap=plt.hot())
-    elif user == 2:
-        img = ax.scatter(time, initial_num_phage, initial_num_antibiotic, c=num_bacteria, cmap=plt.hot())
-    
+    img = ax.scatter(time, initial_num_phage, initial_num_antibiotic, c=mean_resistance, cmap=plt.hot()
     fig.colorbar(img)
     ax.set_xlabel('Time')
     ax.set_ylabel('Initial Phage Count')
