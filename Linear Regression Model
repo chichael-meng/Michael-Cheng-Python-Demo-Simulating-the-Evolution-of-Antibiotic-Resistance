@@ -1,0 +1,6 @@
+```{r, cache = TRUE}
+library(dplyr, warn.conflicts = FALSE)
+treatment_data <- read.csv('Small_Treatment_Data.csv.csv')
+model1 <- lm(num_bacteria ~ time + initial_num_phage + initial_num_antibiotic, data = treatment_data)
+summary(model1)
+```
